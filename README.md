@@ -1,6 +1,13 @@
+# backend-basics
+
+## For running the postgres database docker container
+
 ```
- npm i body-parser express pg nodemon
+docker run --name postgresdb -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=postgres -d postgres
 ```
 
-npm init
-# backend-basics
+## For running installing the packages needed (after copying the package.json from the repo)
+
+```
+ npm i
+```
