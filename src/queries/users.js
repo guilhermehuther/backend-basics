@@ -18,16 +18,14 @@ const sql_create_users = `
 INSERT INTO users (
     id_users,      
     password_users,
-    name_users
+    name_users,
     email_users,     
-    senha_users,   
     created_at_users
 ) VALUES (
     DEFAULT,
     $1,
     $2,
     $3,
-    $4,
     DEFAULT
 ) RETURNING id_users;
 `;
