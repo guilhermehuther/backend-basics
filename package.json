@@ -1,5 +1,5 @@
 {
-  "name": "estudoplay_api",
+  "name": "restful_api",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -12,6 +12,8 @@
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "nodemon": "^3.1.0",
-    "pg": "^8.11.5"
+    "pg": "^8.11.5",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
   }
 }
