@@ -14,7 +14,7 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: "http://localhost:80/api",
+                url: "http://localhost:3000/api",
             },
         ],
     },
@@ -29,7 +29,7 @@ app.use(body_parser.json({ type: "application/json", limit: "25mb" }));
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use("/api", routes);
 
-const PORT = 80;
+const PORT = 3000;
 
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}/api`);
