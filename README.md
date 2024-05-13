@@ -7,15 +7,14 @@ This github is part of a medium article that aims to contribue with the kwonledg
 docs
 
 ```
-http://localhost:3000/docs
+http://localhost:80/docs
 ```
 
 users endpoint
 
 ```
-http://localhost:3000/api/users
+http://localhost:80/api/users
 ```
-
 
 ## For running the Postgres Database Docker container
 
