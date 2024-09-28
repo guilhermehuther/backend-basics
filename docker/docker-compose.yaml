@@ -1,0 +1,13 @@
+services:
+  postgres:
+    container_name: postgres_backend-basics
+    image: postgres:16
+    env_file: ../.env
+    volumes:
+      - ./ddl.sql:/docker-entrypoint-initdb.d/ddl.sql
+      - ./pgdata:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+
+volumes:
+  pgdata:
