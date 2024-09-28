@@ -4,4 +4,4 @@ This github is part of a [Medium article](https://medium.com/@guilhermehuther/ba
 
 I recommend to follow the article tutorial before clonning and using this repo.
 
-There's a [FastAPI](https://fastapi.tiangolo.com/) version of this implementation in another [branch](https://github.com/guilhermehuther/backend-basics/tree/fastapi).
+*There's a [FastAPI](https://fastapi.tiangolo.com/) version of this implementation in another [branch](https://github.com/guilhermehuther/backend-basics/tree/fastapi).
