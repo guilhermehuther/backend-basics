@@ -39,3 +39,17 @@ The main features of this implementation using Python and it's libraries are: [F
 
     fastapi dev main.py
     ```
+
+# Usage
+
+- Docs
+
+    ```
+    http://localhost:8000/docs
+    ```
+
+- Users
+
+    ```
+    http://localhost:8000/api/users
+    ```
