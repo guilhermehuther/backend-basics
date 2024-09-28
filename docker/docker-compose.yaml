@@ -2,6 +2,10 @@ services:
   postgres:
     container_name: postgres_backend-basics
     image: postgres:16
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
     volumes:
       - ./ddl.sql:/docker-entrypoint-initdb.d/ddl.sql
       - ./pgdata:/var/lib/postgresql/data/
