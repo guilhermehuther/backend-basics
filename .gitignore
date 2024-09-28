@@ -1,7 +1,5 @@
-node_modules/
+__pycache__/
 
-.env
+venv/
 
 docker/pgdata/
-
-package-lock.json
