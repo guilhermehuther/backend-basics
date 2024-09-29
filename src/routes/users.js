@@ -10,7 +10,7 @@ const {
 
 /**
  * @swagger
- * /api/users:
+ * /users:
  *   get:
  *     summary: Get all Users OR a specific User.
  *     description: Retrieve all users from the database OR a specific user by their ID.
@@ -102,7 +102,7 @@ router.post("/", create_users);
 
 /**
  * @swagger
- * /api/users:
+ * /users:
  *   put:
  *     summary: Update a User.
  *     description: Update details of an existing user.
@@ -142,7 +142,7 @@ router.put("/", update_users);
 
 /**
  * @swagger
- * /api/users:
+ * /users:
  *   delete:
  *     summary: Delete a User.
  *     description: Remove a user from the database by their ID.
