@@ -1,7 +1,12 @@
-node_modules/
-
-.env
-
+# docker
 docker/pgdata/
+
+# fastapi
+__pycache__/
+
+venv/
+
+# nodejs
+node_modules/
 
 package-lock.json
