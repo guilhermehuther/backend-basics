@@ -52,7 +52,13 @@ async def update_user(id_users: str, body: UpdateUser):
 
     try:
         return {
-            "data": await pg(sql_update_users.format(values=values[:-2], id_users=id_users)),
+            "data": await pg(
+                sql_update_users.format(
+                    values=values[:-2], 
+                    id_users=id_users
+                ), 
+                is_one=True
+            ),
             "status_code": 200,
             "message": "User updated successfully."
         }
@@ -62,7 +68,12 @@ async def update_user(id_users: str, body: UpdateUser):
 async def delete_user(id_users: str):
     try:
         return {
-            "data": await pg(sql_delete_users.format(id_users=id_users)),
+            "data": await pg(
+                sql_delete_users.format(
+                    id_users=id_users
+                ), 
+                is_one=True
+            ),
             "status_code": 200,
             "message": "User deleted successfully."
         }
