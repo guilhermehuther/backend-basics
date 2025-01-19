@@ -35,7 +35,7 @@ The main features of this implementation using Python and it's libraries are: [F
 5. Run server
 
     ```sh
-    cd app
+    cd back
 
     fastapi dev main.py
     ```
