@@ -4,52 +4,82 @@ This follows the same structure of the ["main"](https://medium.com/@guilhermehut
 
 The main features of this implementation using Python and it's libraries are: [FastAPI](https://fastapi.tiangolo.com/) for the Restful Api "engine" and [psycopg](https://www.psycopg.org/psycopg3/docs/index.html) for connecting into the database.
 
-# Setup
+Recently the [frontend](./front/) part was developed with [Next](https://nextjs.org/).
 
-1. Create a python [venv](https://docs.python.org/3/library/venv.html)
+## Backend
 
-    ```sh
-    python3 -m venv venv
-    ```
+### 1. Setup
 
-2. "Activate it" (only linux)
+#### 1.1. Create a python [venv](https://docs.python.org/3/library/venv.html)
 
-    ```sh
-    source venv/bin/activate
-    ```
+```sh
+python3 -m venv venv
+```
 
-3. Install dependecies
+#### 1.2. "Activate it" (only linux)
 
-    ```sh
-    pip install -r requirements.txt
-    ```
+```sh
+source venv/bin/activate
+```
 
-4. Start database (docker)
+#### 1.3. Install dependecies
 
-    ```sh
-    cd docker
+```sh
+pip install -r requirements.txt
+```
 
-    docker compose up -d
-    ```
+#### 1.4. Start database (docker)
 
-5. Run server
+```sh
+cd docker
 
-    ```sh
-    cd back
+docker compose up -d
+```
 
-    fastapi dev main.py
-    ```
+#### 1.5. Run server
 
-# Usage
+```sh
+cd back
 
-- Docs
+python -m uvicorn main:app --reload
+```
 
-    ```
-    http://localhost:8000/docs
-    ```
+### 2. Usage
 
-- Users
+#### 2.1. Docs
 
-    ```
-    http://localhost:8000/api/users
-    ```
+```
+http://localhost:8000/docs
+```
+
+#### 2.2. Users
+
+```
+http://localhost:8000/api/users
+```
+
+## Frontend
+
+### 1. Setup
+
+#### 1.1. Download Dependencies
+
+Also [node.js](https://nodejs.org/) is required.
+
+```sh
+npm i
+```
+
+#### 1.2. Run
+
+```
+npm run dev
+```
+
+#### 1.3. Usage
+
+[backend](#backend) must be running.
+
+```sh
+http://localhost:3000
+```

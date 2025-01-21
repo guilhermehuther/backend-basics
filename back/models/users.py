@@ -1,16 +1,5 @@
-from pydantic import BaseModel, RootModel
-from datetime import datetime
-from typing import Optional, List
-
-class User(BaseModel):
-    id_users: str
-    name_users: str
-    password_users: str
-    email_users: str
-    created_at_users: datetime
-
-class UserResponse(RootModel):
-    root: List[User] | List[int]
+from pydantic import BaseModel
+from typing import Optional
 
 class CreateUser(BaseModel):
     name_users: str

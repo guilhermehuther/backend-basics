@@ -50,20 +50,10 @@ export default function Home() {
     
     clearState()
     
-    // const response_json = response.json()
-
     setLoading(false)
 
     return
   }
-  
-  // async function deleteUser(params:type) {
-    
-  // }
-  
-  // async function updateUser(params:type) {
-  
-  // }
   
   async function getUsers(): Promise<Users[]> {
     try {
@@ -92,13 +82,13 @@ export default function Home() {
     <div>
     {
       loading ? (
-        <div className="flex flex-col space-y-3 content-center">
-          <Skeleton className="h-[400px] w-[650px] rounded-xl" />
-        <div className="space-y-2">
-          <Skeleton className="h-4 w-[250px]" />
-          <Skeleton className="h-4 w-[200px]" />
+        <div className="flex flex-col space-y-3 w-full h-screen justify-center items-center">
+          <Skeleton className="h-[400px] w-[800px] rounded-xl" />
+          <div className="space-y-2">
+            <Skeleton className="h-4 w-[250px]" />
+            <Skeleton className="h-4 w-[200px]" />
+          </div>
         </div>
-      </div>
       ) : (
         <div className="p-20">
         <h1 className="text-4xl">Users</h1>
@@ -106,35 +96,35 @@ export default function Home() {
         <hr/>
 
         <div className="container mx-auto py-10">
-          <DataTable columns={columns} data={data} />
+          <DataTable columns={columns} data={data}/>
         </div>
         
-        <div className="float-right">
-        <Dialog>
-          <Button asChild>
-          <DialogTrigger>Criar</DialogTrigger>
-          </Button>
-          <DialogContent>
-              <DialogTitle>New User</DialogTitle>
+        <div className="float-right position: fixed bottom-10 right-10">
+            <Dialog>
+              <Button asChild>
+              <DialogTrigger>Criar</DialogTrigger>
+              </Button>
+              <DialogContent>
+                  <DialogTitle>New User</DialogTitle>
 
-              <Input onChangeCapture={e => setName(e.currentTarget.value)} type="name" placeholder="Name"></Input>
-              <Input onChangeCapture={e => setPass(e.currentTarget.value)} type="password" placeholder="*****"></Input>
-              <Input onChangeCapture={e => setEmail(e.currentTarget.value)} type="email" placeholder="Email"></Input>
+                  <Input onChangeCapture={e => setName(e.currentTarget.value)} type="name" placeholder="Name"></Input>
+                  <Input onChangeCapture={e => setPass(e.currentTarget.value)} type="password" placeholder="*****"></Input>
+                  <Input onChangeCapture={e => setEmail(e.currentTarget.value)} type="email" placeholder="Email"></Input>
 
-              <DialogClose asChild>
-                <Button onClick={createUser} variant="default">
-                  Confirm
-                </Button>
-              </DialogClose>
+                  <DialogClose asChild>
+                    <Button onClick={createUser} variant="default">
+                      Confirm
+                    </Button>
+                  </DialogClose>
 
-              <DialogClose asChild>
-                <Button onClick={clearState} type="button" variant="outline">
-                  Cancel
-                </Button>
-              </DialogClose>
-          </DialogContent>
-        </Dialog>
-        </div>
+                  <DialogClose asChild>
+                    <Button onClick={clearState} type="button" variant="outline">
+                      Cancel
+                    </Button>
+                  </DialogClose>
+              </DialogContent>
+            </Dialog>
+          </div>
         </div>
       )}
   </div>
