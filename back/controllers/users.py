@@ -1,5 +1,5 @@
 from queries.users import *
-from helpers.pg import *
+from helpers.sqllite import *
 from models.users import *
 from models.model import *
 
@@ -8,7 +8,10 @@ def get_user(
 ):
     try:
         if id_users:
-            data = pg(sql_get_users.format(id_users=id_users))
+            data = query(
+                sql=sql_get_users,
+                params=[id_users]
+            )
 
             return Response(
                 data=data,
@@ -16,7 +19,7 @@ def get_user(
                 message="User retrieved successfully."
             )
         else:
-            data = pg(sql_get_all_users)
+            data = query(sql_get_all_users)
 
             return Response(
                 data=data,
@@ -33,7 +36,10 @@ def create_user(
     body: CreateUser
 ):
     try:
-        data = pg(sql_create_users.format(**body.__dict__))
+        data = query(
+            sql=sql_create_users, 
+            params=list(body.__dict__.values())
+        )
         return Response(
             data=data,
             status_code=200,
@@ -56,11 +62,11 @@ def update_user(
             values += f"{k} = '{v}', "
 
     try:
-        data = pg(
-            sql_update_users.format(
-                values=values[:-2], 
-                id_users=id_users
-            )
+        data = query(
+            sql=sql_update_users.format(
+                columns=values[:-2]
+            ),
+            params=[id_users]
         ) 
 
         return Response(
@@ -78,7 +84,10 @@ def delete_user(
     id_users: str
 ):
     try:
-        data = pg(sql_delete_users.format(id_users=id_users))
+        data = query(
+            sql=sql_delete_users,
+            params=[id_users]
+        )
 
         return Response(
             data=data,

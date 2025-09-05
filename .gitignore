@@ -1,5 +1,5 @@
-# docker
-docker/pgdata/
+# sqllite
+local.db
 
 # fastapi
 __pycache__/

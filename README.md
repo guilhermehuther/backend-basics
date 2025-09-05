@@ -10,33 +10,35 @@ Recently the [frontend](./front/) part was developed with [Next](https://nextjs.
 
 ### 1. Setup
 
-#### 1.1. Create a python [venv](https://docs.python.org/3/library/venv.html)
+#### 1.1. Create a Python [venv](https://docs.python.org/3/library/venv.html)
 
 ```sh
 python3 -m venv venv
 ```
 
-#### 1.2. "Activate it" (only linux)
+#### 1.2. "Activate it"
 
 ```sh
-source venv/bin/activate
+source venv/bin/activate # linux
+
+venv\Scripts\activate # windows
 ```
 
-#### 1.3. Install dependecies
+#### 1.3. Install Dependecies
 
 ```sh
 pip install -r requirements.txt
 ```
 
-#### 1.4. Start database (docker)
+#### 1.4. Init Database
 
 ```sh
-cd docker
+cd helpers
 
-docker compose up -d
+python init_database.py
 ```
 
-#### 1.5. Run server
+#### 1.5. Start Server
 
 ```sh
 cd back
